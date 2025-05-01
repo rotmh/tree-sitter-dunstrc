@@ -1,0 +1,49 @@
+========
+Config
+========
+[global]
+    ix_regex = true
+	color = "#FFFFFF" # comment
+    
+    [a]
+  fdsa =
+
+---
+
+(config 
+  (entry 
+    (section 
+      (name)))
+  (separator 
+    (newline))
+  (whitespace)
+  (entry 
+    (assign 
+      (key)
+      (value)))
+  (separator
+    (newline))
+  (whitespace)
+  (entry
+    (assign 
+      (key)
+      (value)))
+  (separator 
+    (comment) 
+    (newline) 
+    (whitespace) 
+    (empty 
+      (newline)
+      (whitespace)))
+  (entry
+    (section 
+      (name)))
+  (separator 
+    (newline))
+  (whitespace)
+  (entry 
+    (assign 
+      (key)
+      (value)))
+  (separator 
+    (newline)))

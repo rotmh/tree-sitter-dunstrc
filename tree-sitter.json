@@ -1,0 +1,38 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "dunstrc",
+      "camelcase": "Dunstrc",
+      "title": "Dunstrc",
+      "scope": "source.dunstrc",
+      "file-types": [
+        "dunst/dunstrc"
+      ],
+      "injection-regex": "^dunstrc$",
+      "class-name": "TreeSitterDunstrc"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Dunstrc grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Rotem Horesh"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/rotmh/tree-sitter-dunstrc"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
