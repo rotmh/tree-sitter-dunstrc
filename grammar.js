@@ -1,5 +1,5 @@
 /**
- * @file Dunst grammar for tree-sitter
+ * @file Dunstrc grammar for tree-sitter
  * @author Rotem Horesh
  * @license MIT
  */
@@ -8,7 +8,7 @@
 // @ts-check
 
 module.exports = grammar({
-  name: "dunst",
+  name: "dunstrc",
 
   extras: ($) => [$.whitespace],
 
