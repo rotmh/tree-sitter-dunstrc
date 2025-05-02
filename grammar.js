@@ -33,7 +33,8 @@ module.exports = grammar({
 
     // dunst provides quotations as a way to use comment tokens inside the
     // value, but it does not make the value end at the closing quote.
-    value: () => /[^;#\r\n"]*("[^"]*")?[^;#\r\n]*/,
+    value: ($) => seq(/[^;#\r\n"]*/, optional($.quoted), /[^;#\r\n]*/),
+    quoted: () => seq('"', /[^"]*/, '"'),
 
     separator: ($) => seq(optional($.comment), $.newline, repeat($.empty)),
 

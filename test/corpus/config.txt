@@ -27,7 +27,8 @@ Config
   (entry
     (assign 
       (key)
-      (value)))
+      (value
+        (quoted))))
   (separator 
     (comment) 
     (newline) 

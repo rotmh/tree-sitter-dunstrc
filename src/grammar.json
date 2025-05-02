@@ -103,8 +103,46 @@
       "value": "[^\\[#;=\\s\\n\\r][^;#=\\n\\r]*"
     },
     "value": {
-      "type": "PATTERN",
-      "value": "[^;#\\r\\n\"]*(\"[^\"]*\")?[^;#\\r\\n]*"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "[^;#\\r\\n\"]*"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "quoted"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^;#\\r\\n]*"
+        }
+      ]
+    },
+    "quoted": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "\""
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\"]*"
+        },
+        {
+          "type": "STRING",
+          "value": "\""
+        }
+      ]
     },
     "separator": {
       "type": "SEQ",
