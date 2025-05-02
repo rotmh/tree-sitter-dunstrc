@@ -1,7 +1,7 @@
 (assign
-  (key) @property)
+  (key) @attribute)
 
-(comment) @comment @spell
+(comment) @comment.line
 
 [
   "["
@@ -11,4 +11,4 @@
 "=" @operator
 
 (section
-  (name) @module)
+  (name) @namespace)
