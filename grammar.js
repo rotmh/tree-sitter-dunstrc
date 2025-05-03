@@ -25,7 +25,6 @@ module.exports = grammar({
     // any content after the closing `]` is ignored.
     // ref: https://github.com/dunst-project/dunst/blob/d0f89761/src/ini.c#L102
     section: ($) => seq("[", $.name, "]", alias(/.*/, $.comment)),
-
     name: () => /[^\]\n\r]*/,
 
     assign: ($) => seq($.key, "=", $.value),
@@ -34,10 +33,9 @@ module.exports = grammar({
     key: () => /[^\[#;=\s\n\r][^;#=\n\r]*/,
 
     // dunst provides quotations as a way to use comment tokens inside the
-    // value, but it does not make the value end at the closing quote.
+    // value. note: it does not make the value end at the closing quote.
     // ref: https://github.com/dunst-project/dunst/blob/d0f89761/src/ini.c#L125-L135
-    value: ($) => seq(/[^;#\r\n"]*/, optional($.quoted), /[^;#\r\n]*/),
-    quoted: () => /"[^"]*"/,
+    value: () => /[^;#\r\n"]*("[^\r\n"]*")?[^;#\r\n]*/,
 
     // lines may end with comments.
     // ref: https://github.com/dunst-project/dunst/blob/d0f89761/src/ini.c#L137

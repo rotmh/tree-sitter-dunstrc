@@ -112,56 +112,8 @@
       "value": "[^\\[#;=\\s\\n\\r][^;#=\\n\\r]*"
     },
     "value": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "ALIAS",
-          "content": {
-            "type": "PATTERN",
-            "value": "[^;#\\r\\n\"]*"
-          },
-          "named": true,
-          "value": "before"
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "quoted"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "ALIAS",
-          "content": {
-            "type": "PATTERN",
-            "value": "[^;#\\r\\n]*"
-          },
-          "named": true,
-          "value": "after"
-        }
-      ]
-    },
-    "quoted": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "STRING",
-          "value": "\""
-        },
-        {
-          "type": "PATTERN",
-          "value": "[^\"]*"
-        },
-        {
-          "type": "STRING",
-          "value": "\""
-        }
-      ]
+      "type": "PATTERN",
+      "value": "[^;#\\r\\n\"]*(\"[^\\r\\n\"]*\")?[^;#\\r\\n]*"
     },
     "separator": {
       "type": "SEQ",

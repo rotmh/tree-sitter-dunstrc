@@ -85,11 +85,6 @@
     }
   },
   {
-    "type": "quoted",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "section",
     "named": true,
     "fields": {},
@@ -132,33 +127,6 @@
     }
   },
   {
-    "type": "value",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "after",
-          "named": true
-        },
-        {
-          "type": "before",
-          "named": true
-        },
-        {
-          "type": "quoted",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "\"",
-    "named": false
-  },
-  {
     "type": "=",
     "named": false
   },
@@ -169,14 +137,6 @@
   {
     "type": "]",
     "named": false
-  },
-  {
-    "type": "after",
-    "named": true
-  },
-  {
-    "type": "before",
-    "named": true
   },
   {
     "type": "comment",
@@ -192,6 +152,10 @@
   },
   {
     "type": "newline",
+    "named": true
+  },
+  {
+    "type": "value",
     "named": true
   },
   {
