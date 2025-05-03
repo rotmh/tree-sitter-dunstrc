@@ -1,7 +1,7 @@
 ========
 Config
 ========
-[global]
+[global] ignored
     ix_regex = true
 	color = "#FFFFFF" # comment
     
@@ -13,7 +13,8 @@ Config
 (config 
   (entry 
     (section 
-      (name)))
+      (name)
+      (comment)))
   (separator 
     (newline))
   (whitespace)
@@ -27,8 +28,7 @@ Config
   (entry
     (assign 
       (key)
-      (value
-        (quoted))))
+      (value)))
   (separator 
     (comment) 
     (newline) 
@@ -44,7 +44,6 @@ Config
   (whitespace)
   (entry 
     (assign 
-      (key)
-      (value)))
+      (key)))
   (separator 
     (newline)))

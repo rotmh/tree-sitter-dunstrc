@@ -24,10 +24,10 @@ module.exports = grammar({
 
     // any content after the closing `]` is ignored.
     // ref: https://github.com/dunst-project/dunst/blob/d0f89761/src/ini.c#L102
-    section: ($) => seq("[", $.name, "]", alias(/.*/, $.comment)),
+    section: ($) => seq("[", $.name, "]", optional(alias(/.*/, $.comment))),
     name: () => /[^\]\n\r]*/,
 
-    assign: ($) => seq($.key, "=", $.value),
+    assign: ($) => seq($.key, "=", optional($.value)),
 
     // the key may contain everything (obviously except comment tokens).
     key: () => /[^\[#;=\s\n\r][^;#=\n\r]*/,
