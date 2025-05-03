@@ -53,8 +53,8 @@ static const char * const ts_symbol_names[] = {
   [sym_name] = "name",
   [anon_sym_EQ] = "=",
   [sym_key] = "key",
-  [aux_sym_value_token1] = "value_token1",
-  [aux_sym_value_token2] = "value_token2",
+  [aux_sym_value_token1] = "before",
+  [aux_sym_value_token2] = "after",
   [anon_sym_DQUOTE] = "\"",
   [aux_sym_quoted_token1] = "quoted_token1",
   [sym_newline] = "newline",
@@ -129,12 +129,12 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .named = true,
   },
   [aux_sym_value_token1] = {
-    .visible = false,
-    .named = false,
+    .visible = true,
+    .named = true,
   },
   [aux_sym_value_token2] = {
-    .visible = false,
-    .named = false,
+    .visible = true,
+    .named = true,
   },
   [anon_sym_DQUOTE] = {
     .visible = true,

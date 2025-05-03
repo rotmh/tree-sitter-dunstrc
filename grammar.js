@@ -37,7 +37,7 @@ module.exports = grammar({
     // value, but it does not make the value end at the closing quote.
     // ref: https://github.com/dunst-project/dunst/blob/d0f89761/src/ini.c#L125-L135
     value: ($) => seq(/[^;#\r\n"]*/, optional($.quoted), /[^;#\r\n]*/),
-    quoted: () => seq('"', /[^"]*/, '"'),
+    quoted: () => /"[^"]*"/,
 
     // lines may end with comments.
     // ref: https://github.com/dunst-project/dunst/blob/d0f89761/src/ini.c#L137
